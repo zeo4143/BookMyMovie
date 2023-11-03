@@ -5,8 +5,8 @@ import { movies } from "./Routers/movies.js";
 
 //Variables
 const app = express();
-const PORT = 8080;
-const URI = "mongodb+srv://zeo4143:Rafi4143@bookmymovie.h9ppcer.mongodb.net/";
+const PORT = process.env.PORT ||  8080;
+const URI = process.env.MONGO_URI;
 
 //middleWares
 app.use(cors());
