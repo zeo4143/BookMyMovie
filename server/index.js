@@ -1,3 +1,4 @@
+import {} from "dotenv/config.js";
 import express from "express";
 import cors from "cors";
 import { connect } from "mongoose";
