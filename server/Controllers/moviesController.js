@@ -10,6 +10,20 @@ const getAllMovies = async (req, res) => {
   }
 };
 
+const getSpecificMovie = async (req, res) => {
+  try {
+    const { movieName } = req.params;
+
+    const response = await Movie.findOne({ title: movieName });
+
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(404).json("Something went wrong..Try Again");
+  }
+};
+
+//POST
+
 const postNewMovie = async (req, res) => {
   try {
     //Extracting the form data
@@ -26,4 +40,4 @@ const postNewMovie = async (req, res) => {
   }
 };
 
-export { getAllMovies, postNewMovie };
+export { getAllMovies,getSpecificMovie , postNewMovie };
