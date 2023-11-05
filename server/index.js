@@ -4,7 +4,7 @@ import cors from "cors";
 import { dirname, join } from "path"
 import { connect } from "mongoose";
 import { movies } from "./Routers/movies.js";
-import { cinema } from "./Routers/Cinema.js";
+//import { cinema } from "./Routers/Cinema.js";
 import { city } from "./Routers/City.js";
 
 //Variables
