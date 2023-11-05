@@ -4,6 +4,8 @@ import cors from "cors";
 import { dirname, join } from "path"
 import { connect } from "mongoose";
 import { movies } from "./Routers/movies.js";
+import { cinema } from "./Routers/Cinema.js";
+import { city } from "./Routers/City.js";
 
 //Variables
 const app = express();
@@ -19,6 +21,8 @@ app.use(express.json());
 
 //routes
 movies(app)
+// cinema(app)
+city(app)
 
 //setting Images path
 app.use('/images', express.static(imagePath))
