@@ -42,43 +42,6 @@ const getShowsByMovieInCity = async (req, res) => {
       },
     ]).exec();
 
-    // const getShows2 = await Shows.aggregate([
-    //   {
-    //     $match: {
-    //       name: new mongoose.Types.ObjectId(movieId),
-    //       language: language,
-    //       venue: { $in: getTheatreIds },
-    //     },
-    //   },
-    //   {
-    //     $group: {
-    //       _id: {
-    //         date: "$date",
-    //       },
-    //       thetreDetails: {
-    //         $push: {
-    //           theatreId: "$venue",
-    //           timings: {
-    //             $push: {
-    //               time: "$time",
-    //               ticketRef: "$ticketsId",
-    //               audiNo: "$audiNo",
-    //             },
-    //           },
-    //         },
-    //       },
-    //     },
-    //   },
-    //   {
-    //     $project: {
-    //       date: "$_id.date",
-    //       thetreDetails: 1,
-    //       // timings: 1,
-    //       _id: 0,
-    //     },
-    //   },
-    // ]).exec();
-
     const response = await Theatre.populate(getShows, {
       path: "theatreDetails",
       select: { _id: 0, name: 1, address: 1 },
