@@ -12,6 +12,10 @@ const movie = new Schema(
             type : String,
             require : true
         },
+        movieType : {
+            type :String,
+            require :true
+        },
         screenTime : {
             type : String,
             require : true
