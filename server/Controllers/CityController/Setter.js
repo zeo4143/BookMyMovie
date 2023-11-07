@@ -6,10 +6,10 @@ const registerCity = async (req, res) => {
     const data = req.body
 
     try {
-        const {city_name} = data 
+
         const response = new City(data)
         const createCity = await response.save()
-        res.status(200).json(response)
+        res.status(200).json(createCity)
     
 
     } catch (error) {

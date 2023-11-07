@@ -19,6 +19,10 @@ const movie = new Schema(
         language : [String],
         genre : [String],
         images : [String],
+        videoURL : {
+            type : String,
+            require : true
+        }
     }
 )
 
