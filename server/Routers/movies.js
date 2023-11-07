@@ -1,5 +1,5 @@
-import { getMoviesByCity } from "../Controllers/MoviesController/Getter.js"
-import { getAllMovies, postNewMovie } from "../Controllers/moviesController.js"
+import { getAllMovies, getMoviesByCity } from "../Controllers/MoviesController/Getter.js"
+import { postNewMovie } from "../Controllers/MoviesController/Setter.js"
 import { uploadImages } from "../MiddleWares/Multer.js"
 
 const movies = (routes) => {

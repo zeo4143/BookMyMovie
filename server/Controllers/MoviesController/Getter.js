@@ -3,6 +3,16 @@ import { Shows } from "../../Models/ShowsSchema.js"
 import { Theatre } from "../../Models/TheatresSchema.js"
 
 
+const getAllMovies = async (req, res) => {
+    try {
+      const movies = await Movie.find();
+  
+      res.json(movies);
+    } catch (error) {
+      res.status(404).json("Something went wrong..Try Again");
+    }
+};
+
 const getMoviesByCity = async (req, res) => {
     
     const {city} = req.params
@@ -21,4 +31,4 @@ const getMoviesByCity = async (req, res) => {
     }
 }
 
-export {getMoviesByCity}
+export { getAllMovies, getMoviesByCity }
